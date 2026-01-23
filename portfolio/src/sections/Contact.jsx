@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt 
 const Contact = () => {
   return (
     /* CHANGED: bg-gray-50 -> bg-gray-900 for dark background */
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-gray-950">
       <div className="container mx-auto px-6 max-w-5xl">
         
         <div className="flex flex-col md:flex-row justify-between gap-12">

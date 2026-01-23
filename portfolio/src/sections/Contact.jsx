@@ -83,7 +83,7 @@ const Contact = () => {
                 href="https://instagram.com/yourusername" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:-translate-y-1 transition-transform duration-200 shadow-md"
+                className="flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:-translate-y-1 transition-transform duration-200 shadow-md"
               >
                 <FaInstagram size={20} /> Instagram
               </a>

@@ -41,8 +41,8 @@ const Contact = () => {
               {/* Location */}
                {/* CHANGED: text-gray-700 -> text-gray-300. Icon to blue-400 */}
               <div className="flex items-center space-x-4 text-gray-300">
-                <FaMapMarkerAlt className="text-blue-400 text-xl" />
-                <span className="text-lg">Nadarmedu, Erode</span>
+                
+                
               </div>
             </div>
           </div>
@@ -54,14 +54,12 @@ const Contact = () => {
               Connect with Me
             </h3>
              {/* CHANGED: text-gray-600 -> text-gray-300 */}
-            <p className="text-gray-300 text-lg">
-              Check out my repositories or connect with me on professional networks.
-            </p>
+           
             
             {/* Social Buttons (These look good on dark already) */}
             <div className="flex flex-wrap gap-4 pt-2">
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/SrisabarishV" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 // Changed bg-gray-900 to bg-gray-800 so it stands out slightly from the background
@@ -71,7 +69,7 @@ const Contact = () => {
               </a>
 
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://www.linkedin.com/in/srisabarish-v-49375b249/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 px-6 py-3 bg-[#0077b5] text-white rounded-lg hover:-translate-y-1 transition-transform duration-200 shadow-md"
@@ -79,14 +77,7 @@ const Contact = () => {
                 <FaLinkedin size={20} /> LinkedIn
               </a>
 
-              <a 
-                href="https://instagram.com/yourusername" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:-translate-y-1 transition-transform duration-200 shadow-md"
-              >
-                <FaInstagram size={20} /> Instagram
-              </a>
+             
             </div>
 
             {/* CTA Button */}

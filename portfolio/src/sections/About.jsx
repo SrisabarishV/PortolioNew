@@ -63,7 +63,7 @@ const About = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-6 mb-20">
             <a 
-              href="/resume.pdf" 
+              href="https://drive.google.com/file/d/1ZGda8COTvTgn99fmKKeQYNznUCkgXKpn/view?usp=sharing" 
               className="px-8 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               📄 Download CV

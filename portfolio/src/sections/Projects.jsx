@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-// Make sure to install lucide-react if you haven't: npm install lucide-react
-// or just use the emoji icons provided in the data below.
+import SqlCertImage from "../assets/SqlCertificate.png";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("projects");
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  
+  // === NEW: STATE FOR MODAL ===
+  const [selectedCert, setSelectedCert] = useState(null);
 
   // === ANIMATION LOGIC ===
   useEffect(() => {
@@ -71,14 +73,14 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop"
     },
     {
-      title: ".NET Core Mastery",
-      issuer: "Microsoft Learn",
-      date: "2025",
-      image: "https://images.unsplash.com/photo-1633419461186-7d40a2e12729?q=80&w=800&auto=format&fit=crop"
+      title: "Sql Basic",
+      issuer: "Hackerrank",
+      date: "2024",
+      image: SqlCertImage
     }
   ];
 
-  // === NEW DATA: EXPERIENCE ===
+  // === DATA: EXPERIENCE ===
   const experiences = [
     {
       role: "Software Developer",
@@ -97,16 +99,20 @@ const Portfolio = () => {
   ];
 
   // === DATA: TECH STACK ===
-  const techStack = [
-    { name: "React", icon: "⚛️", color: "text-blue-400" },
-    { name: "ASP.NET Core", icon: "🌐", color: "text-purple-400" },
-    { name: "C#", icon: "#️⃣", color: "text-green-400" },
-    { name: "SQL Server", icon: "💾", color: "text-red-400" },
-    { name: "JavaScript", icon: "📜", color: "text-yellow-400" },
-    { name: "Tailwind CSS", icon: "🎨", color: "text-cyan-400" },
-    { name: "Git", icon: "🔗", color: "text-orange-400" },
-    { name: "Rest API", icon: "🔌", color: "text-gray-400" },
-  ];
+const techStack = [
+  { name: "React", icon: "⚛️", color: "text-cyan-400" },          // Official atomic symbol
+  { name: "ASP.NET Core", icon: "🧩", color: "text-purple-400" }, // Modular framework feel
+  { name: "C#", icon: "♯", color: "text-green-400" },            // Musical sharp = C#
+  { name: "MS SQL Server", icon: "🗄️", color: "text-red-400" },      // Database cabinet
+  { name: "MongoDB", icon: "🍃", color: "text-green-500" },       // Official leaf
+  { name: "Elasticsearch", icon: "🔍", color: "text-teal-400" },  // Search precision
+  { name: "Web API", icon: "🌐", color: "text-blue-300" },        // Internet-facing service
+  { name: "JavaScript", icon: "🟨", color: "text-yellow-400" },   // JS brand color
+  { name: "Tailwind CSS", icon: "🌬️", color: "text-cyan-400" },  // Lightweight / utility-first
+  { name: "Git", icon: "🔀", color: "text-orange-400" },         // Branching metaphor
+  { name: "REST API", icon: "🔗", color: "text-gray-400" },      // Connected endpoints
+];
+
 
   return (
     <section 
@@ -143,7 +149,7 @@ const Portfolio = () => {
           <div className="bg-white/5 p-1 rounded-xl flex flex-wrap gap-2 border border-white/10 backdrop-blur-md">
             {[
                 { id: "projects", label: "Projects", icon: "< >" },
-                { id: "experience", label: "Experience", icon: "💼" }, // Added Experience Tab
+                { id: "experience", label: "Experience", icon: "💼" }, 
                 { id: "certificates", label: "Certificates", icon: "🎓" },
                 { id: "tech", label: "Tech Stack", icon: "🛠" }
             ].map((tab) => (
@@ -208,7 +214,7 @@ const Portfolio = () => {
             </div>
           )}
 
-          {/* NEW: EXPERIENCE CARD */}
+          {/* EXPERIENCE CARD */}
           {activeTab === "experience" && (
              <div className="grid md:grid-cols-2 gap-8">
                 {experiences.map((exp, idx) => (
@@ -228,11 +234,9 @@ const Portfolio = () => {
                                 {exp.period}
                             </span>
                         </div>
-                        
                         <p className="text-gray-300 text-sm leading-relaxed mb-6">
                             {exp.desc}
                         </p>
-                        
                         <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill) => (
                                 <span key={skill} className="text-xs font-medium text-gray-400 bg-white/5 px-2 py-1 rounded border border-white/5">
@@ -251,10 +255,12 @@ const Portfolio = () => {
               {certificates.map((cert, idx) => (
                 <div 
                   key={idx} 
-                  className={`relative group rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md ${
+                  className={`relative group rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md cursor-pointer ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
                   }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
+                  /* ADDED: OnClick Event */
+                  onClick={() => setSelectedCert(cert)}
                 >
                     {/* Visual Part */}
                     <div className="h-64 relative p-6 flex flex-col items-center justify-center text-center group-hover:bg-white/10 transition-colors">
@@ -297,6 +303,44 @@ const Portfolio = () => {
 
         </div>
       </div>
+
+      {/* === CERTIFICATE POPUP MODAL === */}
+      {/* This renders only when a certificate is selected */}
+      {selectedCert && (
+        <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
+            onClick={() => setSelectedCert(null)} // Close when clicking outside
+        >
+            <div 
+                className="relative max-w-4xl w-full bg-gray-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside
+            >
+                {/* Close Button */}
+                <button 
+                    onClick={() => setSelectedCert(null)}
+                    className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-red-500 transition-colors backdrop-blur-md"
+                >
+                    ✕
+                </button>
+
+                {/* Image */}
+                <div className="relative w-full h-[60vh] md:h-[70vh] bg-black">
+                     <img 
+                        src={selectedCert.image} 
+                        alt={selectedCert.title} 
+                        className="w-full h-full object-contain"
+                    />
+                </div>
+
+                {/* Footer details */}
+                <div className="p-6 bg-gray-900 border-t border-white/10">
+                    <h3 className="text-2xl font-bold text-white mb-1">{selectedCert.title}</h3>
+                    <p className="text-purple-400">{selectedCert.issuer} • {selectedCert.date}</p>
+                </div>
+            </div>
+        </div>
+      )}
+
     </section>
   );
 };

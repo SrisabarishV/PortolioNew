@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home = () => {
+  const [text, setText] = useState('');
+  const fullText = "Specializing in ASP.NET Core & Modern Web Tech";
 
+  // === TYPEWRITER EFFECT LOGIC ===
+  useEffect(() => {
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= fullText.length) {
+        setText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100); 
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   return (
     <section id="home" className="relative h-screen flex flex-col justify-center px-8 md:px-20 overflow-hidden bg-gray-950">
@@ -12,25 +28,26 @@ const Home = () => {
 
       <div className="z-10 max-w-4xl">
        
-
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
           <span className="text-white">Software</span> <br />
-         <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-blue-500">
+         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
             Developer
             </span>
         </h1>
 
-        {/* Subheading / Role */}
-        <p className="text-xl text-gray-400 mb-8 border-r-2 border-purple-500 inline-block pr-2 animate-pulse">
-          Specializing in ASP.NET Core & Modern Web Tech
-        </p>
+        {/* --- TYPEWRITER SUBHEADING --- */}
+        <div className="min-h-[32px] mb-8">
+            <p className="text-xl text-gray-400 border-r-2 border-purple-500 inline-block pr-2 animate-pulse">
+            {text}
+            </p>
+        </div>
 
         <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
           Hi, I'm <strong className="text-white">Srisabarish V</strong>. I build scalable REST APIs and efficient data workflows using .NET and React.
         </p>
 
-        {/* Tech Stack Chips (Based on your expertise) */}
+        {/* Tech Stack Chips */}
         <div className="flex flex-wrap gap-3 mb-12">
           {['React.js', 'ASP.NET Core', 'C#', 'MS SQL', 'Rest API'].map((tech) => (
             <span 
@@ -42,17 +59,23 @@ const Home = () => {
           ))}
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - UPDATED HERE */}
         <div className="flex gap-4">
-          <button className="px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition-all shadow-lg shadow-purple-900/20">
+          <a 
+            href="#projects"
+            className="px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition-all shadow-lg shadow-purple-900/20"
+          >
             View Projects 
-          </button>
-          <button className="px-6 py-3 rounded-lg border border-gray-700 hover:border-gray-500 text-gray-300 font-medium transition-all">
+          </a>
+          
+          <a 
+            href="#contact"
+            className="px-6 py-3 rounded-lg border border-gray-700 hover:border-gray-500 text-gray-300 font-medium transition-all"
+          >
             Contact Me 
-          </button>
+          </a>
         </div>
 
-       
       </div>
     </section>
   );

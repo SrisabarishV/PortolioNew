@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import SqlCertImage from "../assets/SqlCertificate.png";
+import book from "../assets/Bookworms.png";
+import youtube from "../assets/youtubereact.png";
+import qrcode from "../assets/qrgen.png";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -35,30 +38,38 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
       desc: "Real-time with AI. just natural, personalized conversations, Image Generator, Resume Analyzer.",
       tech: ["React", "OpenAI API"],
-      
       details: "#"
+    },
+     {
+      title: "Bookworm",
+      category: "Web Application",
+      image: book,
+      desc: "A book discovery app that helps users find books based on their interests.",
+      tech: ["React js", "API"],
+      live: "https://srisabarishv.github.io/Bookworm/",
+      details: "https://github.com/SrisabarishV/Bookworm"
     },
     {
       title: "YouTube Clone",
-      category: "Web App",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop",
+      category: "Web Application",
+      image: youtube,
       desc: "A video streaming app made for easy, personal entertainment. Features curated lists. ",
       tech: ["React js", "API"],
       live: "https://srisabarishv.github.io/YouTube-React/",
-      details: "#"
+      details: "https://github.com/SrisabarishV/YouTube-React"
     },
     {
       title: "QrCode Generator",
       category: "Web APP",
-      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
+      image: qrcode,
       desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
       tech: ["React.js"],
       live: "https://srisabarishv.github.io/qr-code-gen",
-      details: "#"
+      details: "https://github.com/SrisabarishV/qr-code-gen"
     },
     {
-      title: "Asp.Net Booking",
-      category: "Web APP",
+      title: "Asp.Net Appointment Booking System",
+      category: "Application",
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
       desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
       tech: ["React.js"],
@@ -66,7 +77,7 @@ const Portfolio = () => {
     },
     {
       title: "Asp.net ",
-      category: "Web APP",
+      category: "",
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
       desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
       tech: ["React.js"],

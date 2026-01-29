@@ -55,15 +55,20 @@ const About = () => {
             Hello! I'm <strong className="text-white">Srisabarish V</strong>, a passionate 
             Software Developer specializing in <span className="text-purple-400">ASP.NET Core</span> and <span className="text-blue-400">React.js</span>. 
             I have hands-on experience building scalable REST APIs and modern web interfaces. 
-            Currently transitioning from an internship at <strong className="text-white">MD Info Tech</strong> to a full-time role at 
+            Currently employed at <strong className="text-white"> Park Intelli Solutions</strong> after completing an internship at <strong className="text-white">MD Info Tech</strong>. 
+            I am focused on continuous learning and developing efficient data workflows.
+
+            {/* Currently transitioning from an internship at <strong className="text-white">MD Info Tech</strong> to a full-time role at 
             <strong className="text-white"> Park Intelli Solutions</strong>. I am focused on continuous learning, 
-            aiming to master cloud architecture and efficient data workflows.
+            aiming to master cloud architecture and efficient data workflows. */}
           </p>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-6 mb-20">
             <a 
-              href="https://drive.google.com/file/d/1ZGda8COTvTgn99fmKKeQYNznUCkgXKpn/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1ZGda8COTvTgn99fmKKeQYNznUCkgXKpn/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="px-8 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2 hover:scale-105 active:scale-95"
             >
               📄 Download CV
@@ -131,7 +136,7 @@ const About = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
               </div>
-              <span className="text-3xl font-bold text-white">0.5+</span>
+              <span className="text-3xl font-bold text-white">0.6+</span>
             </div>
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Years Exp.</h3>
             <p className="text-xs text-gray-500">Continuous learning journey</p>

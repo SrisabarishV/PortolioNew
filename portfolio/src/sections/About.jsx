@@ -52,7 +52,7 @@ const About = () => {
           </h2>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            Hello! I'm <strong className="text-white">Srisabarish V</strong>, a passionate 
+            I'm a passionate 
             Software Developer specializing in <span className="text-purple-400">ASP.NET Core</span> and <span className="text-blue-400">React.js</span>. 
             I have hands-on experience building scalable REST APIs and modern web interfaces. 
             Currently employed at <strong className="text-white"> Park Intelli Solutions</strong> after completing an internship at <strong className="text-white">MD Info Tech</strong>. 

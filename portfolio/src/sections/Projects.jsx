@@ -120,7 +120,7 @@ const Portfolio = () => {
         "Developed scalable REST APIs using ASP.NET Core for smart-bin operations, ticket management, and travel-related workflows. Built optimized LINQ and SQL Server queries with multi-table joins.",
         "Implemented validation-first API workflows and designed clean service–repository (CLEAN) architecture. Integrated backend APIs with Angular frontend (Park Travel) and implemented QR code–based workflows."
       ],
-      skills: ["ASP.NET Core", "C#", "React.js", "MS SQL"]
+      skills: ["ASP.NET Core", "C#", "React.js", "MS SQL", "Postgres SQL" , "Elastic Search"]
     },
     {
       role: "Software Developer Intern",
@@ -147,7 +147,9 @@ const techStack = [
   { name: "JavaScript", icon: "🟨", color: "text-yellow-400" },   // JS brand color
   { name: "Tailwind CSS", icon: "🌬️", color: "text-cyan-400" },  // Lightweight / utility-first
   { name: "Git", icon: "🔀", color: "text-orange-400" },         // Branching metaphor
-  { name: "REST API", icon: "🔗", color: "text-gray-400" },      // Connected endpoints
+  { name: "REST API", icon: "🔗", color: "text-gray-400" }, 
+  { name: "Python", icon: "🐍", color: "text-blue-400" },        // The classic snake
+  { name: "MVC", icon: "💠", color: "text-indigo-400" }, // Architecture/Structure icon     // Connected endpoints
 ];
 
 

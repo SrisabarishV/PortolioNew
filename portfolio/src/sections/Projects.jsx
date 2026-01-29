@@ -69,19 +69,19 @@ const Portfolio = () => {
     },
     {
       title: "Asp.Net Appointment Booking System",
-      category: "Application",
-      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
-      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
-      tech: ["React.js"],
-      details: "#"
+      category: "Asp.Net MVC",
+      image: "https://images.unsplash.com/photo-1574375927638-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
+      desc: "A Web application that allows users to Book appointments based on availabibility with admin panel.",
+      tech: ["MVC", "C#", "SQL"],
+      details: "https://github.com/SrisabarishV/AppointmentBookingSystem"
     },
     {
-      title: "Asp.net ",
-      category: "",
+      title: "Authorization-as-Admin-User-MVC",
+      category: "Asp.Net MVC",
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
       desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
-      tech: ["React.js"],
-      details: "#"
+      tech: ["MVC", "C#", "SQL"],
+      details: "https://github.com/SrisabarishV/Authorization-as-Admin-User-MVC"
     }
 
   ];
@@ -89,16 +89,16 @@ const Portfolio = () => {
   // === DATA: CERTIFICATES ===
   const certificates = [
     {
-      title: "B.Tech Information Technology",
-      issuer: "Velalar College of Engg.",
+      title: "Internship Completion ",
+      issuer: "MD InfoTech",
       date: "2024",
-      image: "https://images.unsplash.com/photo-1589330694653-4a8b243e36aa?q=80&w=800&auto=format&fit=crop"
+      image: ""
     },
     {
       title: "Full Stack Development",
       issuer: "Udemy / Bootcamps",
-      date: "2023",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop"
+      date: "2024",
+      image: ""
     },
     {
       title: "Sql Basic",
@@ -109,19 +109,28 @@ const Portfolio = () => {
   ];
 
   // === DATA: EXPERIENCE ===
+ // === DATA: EXPERIENCE ===
   const experiences = [
     {
       role: "Software Developer",
       company: "Park Intelli Solutions",
       period: "Aug 2025 - Present",
-      desc: "Specializing in ASP.NET Core and React.js. Building scalable REST APIs, optimizing SQL queries, and implementing Clean Architecture for enterprise-grade applications.",
+      // Description is an ARRAY
+      desc: [
+        "Developed scalable REST APIs using ASP.NET Core for smart-bin operations, ticket management, and travel-related workflows. Built optimized LINQ and SQL Server queries with multi-table joins.",
+        "Implemented validation-first API workflows and designed clean service–repository (CLEAN) architecture. Integrated backend APIs with Angular frontend (Park Travel) and implemented QR code–based workflows."
+      ],
       skills: ["ASP.NET Core", "C#", "React.js", "MS SQL"]
     },
     {
       role: "Software Developer Intern",
       company: "MD Info Tech",
       period: "Jun 2024 - Nov 2024",
-      desc: "Assisted in backend development and database management. Collaborated with the team to troubleshoot bugs and improve application performance.",
+      // Description is now an ARRAY (Fixed consistency)
+      desc: [
+        "Developed and tested RESTful Web APIs using ASP.NET Core to perform full CRUD operations.",
+        "Improved backend data management by automating the SQL deployment process and scheduled jobs. Gained hands-on experience with version control using Git and Swagger."
+      ],
       skills: ["C#", ".NET", "Git", "Problem Solving"]
     }
   ];
@@ -244,7 +253,7 @@ const techStack = [
             </div>
           )}
 
-          {/* EXPERIENCE CARD */}
+         {/* EXPERIENCE CARD */}
           {activeTab === "experience" && (
              <div className="grid md:grid-cols-2 gap-8">
                 {experiences.map((exp, idx) => (
@@ -264,9 +273,24 @@ const techStack = [
                                 {exp.period}
                             </span>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                            {exp.desc}
-                        </p>
+
+                        {/* SAFE DESCRIPTION RENDERING */}
+                        <div className="text-gray-300 text-sm leading-relaxed mb-6">
+                            {Array.isArray(exp.desc) ? (
+                                <ul className="list-none space-y-2">
+                                    {exp.desc.map((point, i) => (
+                                        <li key={i} className="flex items-start">
+                                            <span className="text-purple-500 mr-2 mt-1">•</span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>{exp.desc}</p>
+                            )}
+                        </div>
+
+                        {/* SKILLS LOOP */}
                         <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill) => (
                                 <span key={skill} className="text-xs font-medium text-gray-400 bg-white/5 px-2 py-1 rounded border border-white/5">
@@ -278,7 +302,6 @@ const techStack = [
                 ))}
              </div>
           )}
-
           {/* CERTIFICATES GRID */}
           {activeTab === "certificates" && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

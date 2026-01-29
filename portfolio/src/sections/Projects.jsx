@@ -30,32 +30,49 @@ const Portfolio = () => {
   // === DATA: PROJECTS ===
   const projects = [
     {
-      title: "IntervueAI",
+      title: "QuickAI",
       category: "AI & Web App",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
-      desc: "Real-time mock interviews with AI. No forms or clicks, just natural, personalized conversations.",
-      tech: ["React", "OpenAI API", "Tailwind"],
-      live: "#",
+      desc: "Real-time with AI. just natural, personalized conversations, Image Generator, Resume Analyzer.",
+      tech: ["React", "OpenAI API"],
+      
       details: "#"
     },
     {
-      title: "Blendy Social",
-      category: "Mobile App",
+      title: "YouTube Clone",
+      category: "Web App",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop",
-      desc: "A social app where you can connect in real-time. Log in with one click, share moments instantly.",
-      tech: ["React Native", "Firebase", "Redux"],
-      live: "#",
+      desc: "A video streaming app made for easy, personal entertainment. Features curated lists. ",
+      tech: ["React js", "API"],
+      live: "https://srisabarishv.github.io/YouTube-React/",
       details: "#"
     },
     {
-      title: "WATCHit",
-      category: "Streaming Platform",
+      title: "QrCode Generator",
+      category: "Web APP",
       image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
-      desc: "A video streaming app made for easy, personal entertainment. Features curated lists.",
-      tech: ["Next.js", "Stripe", "Supabase"],
-      live: "#",
+      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
+      tech: ["React.js"],
+      live: "https://srisabarishv.github.io/qr-code-gen",
+      details: "#"
+    },
+    {
+      title: "Asp.Net Booking",
+      category: "Web APP",
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
+      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
+      tech: ["React.js"],
+      details: "#"
+    },
+    {
+      title: "Asp.net ",
+      category: "Web APP",
+      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
+      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
+      tech: ["React.js"],
       details: "#"
     }
+
   ];
 
   // === DATA: CERTIFICATES ===
@@ -169,7 +186,7 @@ const techStack = [
         </div>
 
         {/* === CONTENT AREA === */}
-        <div className="min-h-[500px]">
+        <div className="min-h-125">
             
           {/* PROJECTS GRID */}
           {activeTab === "projects" && (
@@ -188,7 +205,7 @@ const techStack = [
                       alt={project.title} 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
                   </div>
                   
                   <div className="p-6">
@@ -205,7 +222,9 @@ const techStack = [
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <a href={project.live} className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1">Live Demo ↗</a>
+                    {project.live && (
+                      <a href={project.live} className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1"> Live Demo ↗</a>
+                    )}          
                       <a href={project.details} className="text-gray-400 text-sm font-semibold hover:text-white flex items-center gap-1">Details →</a>
                     </div>
                   </div>

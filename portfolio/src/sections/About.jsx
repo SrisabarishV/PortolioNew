@@ -66,7 +66,7 @@ const About = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-6 mb-20">
             <a 
-              href="https://drive.google.com/file/d/1ZGda8COTvTgn99fmKKeQYNznUCkgXKpn/view?usp=sharing"
+              href="https://drive.google.com/file/d/1xRGhZoutDfDreN_7Vx0jXzUvoHyJQ6m9/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer" 
               className="px-8 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold transition-all shadow-lg shadow-purple-900/20 flex items-center gap-2 hover:scale-105 active:scale-95"

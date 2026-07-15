@@ -51,17 +51,20 @@ const About = () => {
             About <span className="text-purple-500">Me</span>
           </h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            I'm a passionate 
-            Software Developer specializing in <span className="text-purple-400">ASP.NET Core</span> and <span className="text-blue-400">React.js</span>. 
-            I have hands-on experience building scalable REST APIs and modern web interfaces. 
-            Currently employed at <strong className="text-white"> Park Intelli Solutions</strong> after completing an internship at <strong className="text-white">MD Info Tech</strong>. 
-            I am focused on continuous learning and developing efficient data workflows.
-
-            {/* Currently transitioning from an internship at <strong className="text-white">MD Info Tech</strong> to a full-time role at 
-            <strong className="text-white"> Park Intelli Solutions</strong>. I am focused on continuous learning, 
-            aiming to master cloud architecture and efficient data workflows. */}
-          </p>
+          <p className="text-lg leading-relaxed text-gray-300">
+  I'm a passionate Software Developer specializing in{" "}
+  <span className="text-purple-400">ASP.NET Core</span> and{" "}
+  <span className="text-blue-400">React.js</span>, with hands-on experience
+  building scalable REST APIs, modern web applications, and data-driven
+  solutions. I have worked on projects involving real estate analytics,
+   Elasticsearch integration, financial dashboards, and
+  multi-vendor service booking platforms. Currently employed at{" "}
+  <strong className="text-white">Park Intelli Solutions</strong> after
+  completing an internship at{" "}
+  <strong className="text-white">MD Info Tech</strong>. I focus on writing
+  efficient, maintainable code and designing optimized data workflows while
+  continuously learning and adopting modern software development practices.
+</p>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap justify-center gap-6 mb-20">
@@ -117,7 +120,7 @@ const About = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
-              <span className="text-3xl font-bold text-white">1</span>
+              <span className="text-3xl font-bold text-white">1+</span>
             </div>
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Degree</h3>
             <p className="text-xs text-gray-500">B.Tech Information Technology</p>

@@ -3,15 +3,25 @@ import SqlCertImage from "../assets/SqlCertificate.png";
 import book from "../assets/Bookworms.png";
 import youtube from "../assets/youtubereact.png";
 import qrcode from "../assets/qrgen.png";
-import dashboard from "../assets/dashboard.png";
+import MJ1 from "../assets/MJ1.png";
+import MJ2 from "../assets/MJ2.png";
+import MJ3 from "../assets/MJ3.png";
+import park1 from "../assets/Parktravel1.png";
+import park2 from "../assets/Parktravel2.png";
+import revalix1 from "../assets/revalix1.png";
+import revalix2 from "../assets/revalix2.png";
+import revalix3 from "../assets/revalix3.png";
+import revalix4 from "../assets/revalix4.png";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("projects");
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   
-  // === NEW: STATE FOR MODAL ===
+  // === STATE FOR MODALS ===
   const [selectedCert, setSelectedCert] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null); // Controls the project modal
+  const [activeImageIndex, setActiveImageIndex] = useState(0);  // Controls which gallery image is showing
 
   // === ANIMATION LOGIC ===
   useEffect(() => {
@@ -32,75 +42,89 @@ const Portfolio = () => {
   }, []);
 
   // === DATA: PROJECTS ===
+  // Note: I added a 'gallery' array and changed 'details' to 'github' for the source code links
   const projects = [
     {
-      title: "MJ Transport - Logistics Management",
-      category: "DOTNET c#",
-      image: dashboard,
-      desc: "Developed a scalable backend for a logistics management system using ASP.NET Core and PostgreSQL,handling trips, fleet, drivers, payments, and role-based access control.Built secure RESTful APIs, automated financial reports, dashboard analytics, and optimized database operations for efficient and transparent business management.",
+      title: "Revalix ",
+      category: "DOTNET c# & React",
+      image: revalix1,
+      gallery: [ revalix1, revalix2, revalix3, revalix4 ],
+      desc: "Revalix is a Real Estate Analytics and Property Intelligence platform that aggregates property data from multiple sources and provides advanced search, valuation, and analytics capabilities for real estate professionals such as appraisers, lenders, investors, and property analysts. objective of the platform is to convert large volumes of raw property data into meaningful insights that help users make better real estate decisions.",
       tech: ["React", "Dot net Core", "C#", "Postgres SQL"],
-      details: "#"
+      // github: "#"
+    }, 
+    {
+      title: "MJ Transport - Logistics Management",
+      category: "DOTNET c# & React",
+      image: MJ1,
+      gallery: [  MJ1, MJ2, MJ3  ],
+      desc: "Developed a scalable backend for the MJ Transport Logistics Management System using ASP.NET Core and PostgreSQL. Implemented modules for trip management, intent approval workflows, fleet tracking, driver and truck management, payment processing, financial reporting, and role-based access control. Built automated Profit & Loss reports, supplier and client ledgers, office expense management, and dashboard analytics with real-time KPIs. Designed optimized database queries, secure JWT authentication, validation logic to prevent financial inconsistencies, Excel export functionality, and RESTful APIs following N- tier Architecture principles. The system provides accurate operational tracking, financial transparency, and efficient business reporting through a secure and high-performance backend.",
+      tech: ["React", "Dot net Core", "C#", "Postgres SQL"],
+      // github: "#"
+    },
+    { 
+      title: "Park Travel - Smart Travel Management",
+      category: "DOTNET c#",
+      image: park1,
+      gallery: [park1 , park2],
+      desc: "Park Travel is a Smart Travel Management System designed to digitize and automate employee transportation management for organizations. The system manages everything from employee registration and trip scheduling to vehicle allocation, driver management, QR-based attendance tracking, and real-time location monitoring.The main objective of the project is to reduce manual transportation management efforts, improve employee safety, and provide complete visibility of daily transportation operations.",
+      tech: ["React", "Dot net Core", "C#", "MySQL"],
+      // github: "#"
     },
     {
       title: "QuickAI",
       category: "AI & Web App",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
-      desc: "Real-time with AI. just natural, personalized conversations, Image Generator, Resume Analyzer.",
+      gallery: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"],
+      desc: "Real-time mock interviews with AI. No forms or clicks, just natural, personalized conversations. Includes an Image Generator and Resume Analyzer to help candidates prepare fully.",
       tech: ["React", "OpenAI API"],
-      details: "#"
+      github: "#"
     },
      {
       title: "Bookworm",
       category: "Web Application",
       image: book,
-      desc: "A book discovery app that helps users find books based on their interests.",
+      gallery: [book],
+      desc: "A book discovery app that helps users find books based on their interests. Built with a responsive React frontend and connected to external book APIs for real-time search and filtering.",
       tech: ["React js", "API"],
       live: "https://srisabarishv.github.io/Bookworm/",
-      details: "https://github.com/SrisabarishV/Bookworm"
+      github: "https://github.com/SrisabarishV/Bookworm"
     },
     {
       title: "YouTube Clone",
       category: "Web Application",
       image: youtube,
-      desc: "A video streaming app made for easy, personal entertainment. Features curated lists. ",
+      gallery: [youtube],
+      desc: "A video streaming app interface modeled after YouTube. Made for easy, personal entertainment featuring curated lists, video playback UI, and search functionality using RapidAPI.",
       tech: ["React js", "API"],
       live: "https://srisabarishv.github.io/YouTube-React/",
-      details: "https://github.com/SrisabarishV/YouTube-React"
+      github: "https://github.com/SrisabarishV/YouTube-React"
     },
     {
       title: "QrCode Generator",
       category: "Web APP",
       image: qrcode,
-      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
+      gallery: [qrcode],
+      desc: "A fast and responsive web application that allows users to generate customized QR codes for URLs, text, and contact information instantly.",
       tech: ["React.js"],
       live: "https://srisabarishv.github.io/qr-code-gen",
-      details: "https://github.com/SrisabarishV/qr-code-gen"
-    },
-    {
-      title: "Asp.Net Appointment Booking System",
-      category: "Asp.Net MVC",
-      image: "https://images.unsplash.com/photo-1574375927638-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
-      desc: "A Web application that allows users to Book appointments based on availabibility with admin panel.",
-      tech: ["MVC", "C#", "SQL"],
-      details: "https://github.com/SrisabarishV/AppointmentBookingSystem"
+      github: "https://github.com/SrisabarishV/qr-code-gen"
     }
-    
-
   ];
 
   // === DATA: CERTIFICATES ===
   const certificates = [
     {
-      title: "Internship Completion ",
+      title: "Internship Completion",
       issuer: "MD InfoTech",
       date: "2024",
-      image: ""
+      image: "" // Add your image imports here
     },
     {
       title: "Full Stack Development",
       issuer: "Udemy / Bootcamps",
       date: "2024",
-      image: ""
+      image: "" 
     },
     {
       title: "Sql Basic",
@@ -111,13 +135,11 @@ const Portfolio = () => {
   ];
 
   // === DATA: EXPERIENCE ===
- // === DATA: EXPERIENCE ===
   const experiences = [
     {
       role: "Software Developer",
       company: "Park Intelli Solutions",
       period: "Aug 2025 - Present",
-      // Description is an ARRAY
       desc: [
         "Developed scalable REST APIs using ASP.NET Core for smart-bin operations, ticket management, and travel-related workflows. Built optimized LINQ and SQL Server queries with multi-table joins.",
         "Implemented validation-first API workflows and designed clean service–repository (CLEAN) architecture. Integrated backend APIs with Angular frontend (Park Travel) and implemented QR code–based workflows."
@@ -128,7 +150,6 @@ const Portfolio = () => {
       role: "Software Developer Intern",
       company: "MD Info Tech",
       period: "Jun 2024 - Nov 2024",
-      // Description is now an ARRAY (Fixed consistency)
       desc: [
         "Developed and tested RESTful Web APIs using ASP.NET Core to perform full CRUD operations.",
         "Improved backend data management by automating the SQL deployment process and scheduled jobs. Gained hands-on experience with version control using Git and Swagger."
@@ -138,22 +159,21 @@ const Portfolio = () => {
   ];
 
   // === DATA: TECH STACK ===
-const techStack = [
-  { name: "React", icon: "⚛️", color: "text-cyan-400" },          // Official atomic symbol
-  { name: "ASP.NET Core", icon: "🧩", color: "text-purple-400" }, // Modular framework feel
-  { name: "C#", icon: "♯", color: "text-green-400" },            // Musical sharp = C#
-  { name: "MS SQL Server", icon: "🗄️", color: "text-red-400" },      // Database cabinet
-  { name: "MongoDB", icon: "🍃", color: "text-green-500" },       // Official leaf
-  { name: "Elasticsearch", icon: "🔍", color: "text-teal-400" },  // Search precision
-  { name: "Web API", icon: "🌐", color: "text-blue-300" },        // Internet-facing service
-  { name: "JavaScript", icon: "🟨", color: "text-yellow-400" },   // JS brand color
-  { name: "Tailwind CSS", icon: "🌬️", color: "text-cyan-400" },  // Lightweight / utility-first
-  { name: "Git", icon: "🔀", color: "text-orange-400" },         // Branching metaphor
-  { name: "REST API", icon: "🔗", color: "text-gray-400" }, 
-  { name: "Python", icon: "🐍", color: "text-blue-400" },        // The classic snake
-  { name: "MVC", icon: "💠", color: "text-indigo-400" }, // Architecture/Structure icon     // Connected endpoints
-];
-
+  const techStack = [
+    { name: "React", icon: "⚛️", color: "text-cyan-400" },          
+    { name: "ASP.NET Core", icon: "🧩", color: "text-purple-400" }, 
+    { name: "C#", icon: "♯", color: "text-green-400" },            
+    { name: "MS SQL Server", icon: "🗄️", color: "text-red-400" },      
+    { name: "MongoDB", icon: "🍃", color: "text-green-500" },       
+    { name: "Elasticsearch", icon: "🔍", color: "text-teal-400" },  
+    { name: "Web API", icon: "🌐", color: "text-blue-300" },        
+    { name: "JavaScript", icon: "🟨", color: "text-yellow-400" },   
+    { name: "Tailwind CSS", icon: "🌬️", color: "text-cyan-400" },  
+    { name: "Git", icon: "🔀", color: "text-orange-400" },         
+    { name: "REST API", icon: "🔗", color: "text-gray-400" }, 
+    { name: "Python", icon: "🐍", color: "text-blue-400" },        
+    { name: "MVC", icon: "💠", color: "text-indigo-400" }, 
+  ];
 
   return (
     <section 
@@ -218,38 +238,48 @@ const techStack = [
               {projects.map((project, idx) => (
                 <div 
                   key={idx} 
-                  className={`group bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-700 hover:-translate-y-2 ${
+                  className={`flex flex-col h-full group bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-700 hover:-translate-y-2 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
                   }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 shrink-0 overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-2">
-                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                        <span className="text-xs text-purple-300 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">{project.category}</span>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex justify-between items-start mb-2 gap-2">
+                        <h3 className="text-xl font-bold text-white line-clamp-2">{project.title}</h3>
+                        <span className="shrink-0 text-xs text-purple-300 bg-purple-500/10 px-2 py-1 rounded border border-purple-500/20">{project.category}</span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.desc}</p>
+                    <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-1">{project.desc}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((t) => (
+                      {project.tech.slice(0,4).map((t) => (
                         <span key={t} className="text-xs px-2 py-1 rounded bg-black/30 text-gray-300 border border-white/5">
                           {t}
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 mt-auto pt-4 border-t border-white/10">
                     {project.live && (
-                      <a href={project.live} className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1"> Live Demo ↗</a>
+                      <a href={project.live} target="_blank" rel="noreferrer" className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1"> Live Demo ↗</a>
                     )}          
-                      <a href={project.details} className="text-gray-400 text-sm font-semibold hover:text-white flex items-center gap-1">Details →</a>
+                      {/* DETAILS BUTTON - Opens the Modal */}
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setSelectedProject(project);
+                          setActiveImageIndex(0); // Reset gallery to first image
+                        }} 
+                        className="text-gray-400 text-sm font-semibold hover:text-white flex items-center gap-1 cursor-pointer"
+                      >
+                        Details →
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -278,7 +308,6 @@ const techStack = [
                             </span>
                         </div>
 
-                        {/* SAFE DESCRIPTION RENDERING */}
                         <div className="text-gray-300 text-sm leading-relaxed mb-6">
                             {Array.isArray(exp.desc) ? (
                                 <ul className="list-none space-y-2">
@@ -294,7 +323,6 @@ const techStack = [
                             )}
                         </div>
 
-                        {/* SKILLS LOOP */}
                         <div className="flex flex-wrap gap-2">
                             {exp.skills.map((skill) => (
                                 <span key={skill} className="text-xs font-medium text-gray-400 bg-white/5 px-2 py-1 rounded border border-white/5">
@@ -306,6 +334,7 @@ const techStack = [
                 ))}
              </div>
           )}
+
           {/* CERTIFICATES GRID */}
           {activeTab === "certificates" && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -316,10 +345,8 @@ const techStack = [
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
                   }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
-                  /* ADDED: OnClick Event */
                   onClick={() => setSelectedCert(cert)}
                 >
-                    {/* Visual Part */}
                     <div className="h-64 relative p-6 flex flex-col items-center justify-center text-center group-hover:bg-white/10 transition-colors">
                         <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-3xl mb-4 border border-white/10">
                             📜
@@ -329,7 +356,6 @@ const techStack = [
                         <p className="text-xs text-gray-500">Issued: {cert.date}</p>
                     </div>
                     
-                    {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-purple-900/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <button className="px-6 py-2 bg-white text-purple-900 font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                             View Certificate
@@ -361,26 +387,128 @@ const techStack = [
         </div>
       </div>
 
-      {/* === CERTIFICATE POPUP MODAL === */}
-      {/* This renders only when a certificate is selected */}
-      {selectedCert && (
+     {/* ========================================= */}
+      {/* === 1. PROJECT DETAILS POPUP MODAL ==== */}
+      {/* ========================================= */}
+      {selectedProject && (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
-            onClick={() => setSelectedCert(null)} // Close when clicking outside
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+            onClick={() => setSelectedProject(null)} 
         >
             <div 
-                className="relative max-w-4xl w-full bg-gray-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-                onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside
+                className="relative w-full max-w-7xl max-h-[95vh] bg-gray-950 rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row"
+                onClick={(e) => e.stopPropagation()} 
             >
                 {/* Close Button */}
                 <button 
-                    onClick={() => setSelectedCert(null)}
-                    className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-red-500 transition-colors backdrop-blur-md"
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute top-4 right-4 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-red-500 transition-colors backdrop-blur-md border border-white/10 shadow-lg"
                 >
                     ✕
                 </button>
 
-                {/* Image */}
+                {/* LEFT SIDE: Image Gallery (Expanded to 60% for better image clarity) */}
+                <div className="w-full md:w-[60%] bg-gray-900/30 p-4 md:p-8 border-r border-white/10 flex flex-col gap-4 overflow-y-auto custom-scrollbar">
+                    
+                    {/* Main Active Image - Removed strict aspect ratio, allowing it to scale naturally */}
+                    <div className="w-full flex-1 rounded-xl overflow-hidden bg-black/20 flex items-center justify-center p-2">
+                        <img 
+                            src={selectedProject.gallery ? selectedProject.gallery[activeImageIndex] : selectedProject.image} 
+                            alt={`${selectedProject.title} screenshot`} 
+                            className="w-full h-auto max-h-[65vh] object-contain rounded-lg drop-shadow-xl"
+                        />
+                    </div>
+                    
+                    {/* Thumbnail Selector */}
+                    {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                       <div className="flex gap-3 overflow-x-auto pb-2 snap-x mt-auto">
+                           {selectedProject.gallery.slice(0, 5).map((img, i) => (
+                               <button 
+                                   key={i} 
+                                   onClick={() => setActiveImageIndex(i)}
+                                   className={`relative shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 transition-all snap-start ${
+                                       activeImageIndex === i 
+                                       ? 'border-purple-500 opacity-100 scale-100' 
+                                       : 'border-white/10 opacity-50 hover:opacity-100 hover:border-purple-500/50 scale-95'
+                                   }`}
+                               >
+                                   <img src={img} alt={`Thumbnail ${i+1}`} className="w-full h-full object-cover" />
+                               </button>
+                           ))}
+                       </div>
+                    )}
+                </div>
+
+                {/* RIGHT SIDE: Text, Tech, and Links (40% width) */}
+                <div className="w-full md:w-[40%] p-6 md:p-8 overflow-y-auto custom-scrollbar flex flex-col">
+                    <h3 className="text-3xl font-bold text-white mb-2 pr-10">{selectedProject.title}</h3>
+                    <div className="mb-6">
+                        <span className="text-sm font-semibold text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+                            {selectedProject.category}
+                        </span>
+                    </div>
+
+                    <h4 className="text-lg font-semibold text-white mb-3 border-b border-white/10 pb-2">About the Project</h4>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8">
+                        {selectedProject.desc || "No description provided."}
+                    </p>
+
+                    <h4 className="text-lg font-semibold text-white mb-3 border-b border-white/10 pb-2">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-2 mb-10">
+                        {selectedProject.tech.map(t => (
+                            <span key={t} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 shadow-sm">
+                                {t}
+                            </span>
+                        ))}
+                    </div>
+
+                    {/* Action Buttons (Pushed to bottom) */}
+                    <div className="mt-auto flex flex-wrap gap-4 pt-4 border-t border-white/10">
+                        {selectedProject.live && (
+                            <a 
+                                href={selectedProject.live} 
+                                target="_blank" 
+                                rel="noreferrer"
+                                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg shadow-lg shadow-purple-900/20 transition-all flex items-center gap-2"
+                            >
+                                Live Preview ↗
+                            </a>
+                        )}
+                        {selectedProject.github && (
+                            <a 
+                                href={selectedProject.github} 
+                                target="_blank" 
+                                rel="noreferrer"
+                                className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg border border-white/10 transition-all flex items-center gap-2"
+                            >
+                                Source Code &lt;/&gt;
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
+      )}
+
+      {/* ========================================= */}
+      {/* === 2. CERTIFICATE POPUP MODAL ======== */}
+      {/* ========================================= */}
+      {selectedCert && (
+        <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
+            onClick={() => setSelectedCert(null)}
+        >
+            <div 
+                className="relative max-w-4xl w-full bg-gray-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <button 
+                    onClick={() => setSelectedCert(null)}
+                    className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-red-500 transition-colors backdrop-blur-md border border-white/10"
+                >
+                    ✕
+                </button>
+
                 <div className="relative w-full h-[60vh] md:h-[70vh] bg-black">
                      <img 
                         src={selectedCert.image} 
@@ -389,7 +517,6 @@ const techStack = [
                     />
                 </div>
 
-                {/* Footer details */}
                 <div className="p-6 bg-gray-900 border-t border-white/10">
                     <h3 className="text-2xl font-bold text-white mb-1">{selectedCert.title}</h3>
                     <p className="text-purple-400">{selectedCert.issuer} • {selectedCert.date}</p>

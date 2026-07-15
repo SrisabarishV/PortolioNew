@@ -43,8 +43,8 @@ const Home = () => {
       
       {/* RIGHT-SIDE BACKGROUND IMAGE LAYER */}
       <div className="absolute top-0 right-0 w-full md:w-3/5 h-full z-0 opacity-40 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/60 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-gray-950 via-gray-950/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-transparent to-transparent z-10" />
         
         {bgImages.map((img, index) => (
           <img
@@ -74,7 +74,7 @@ const Home = () => {
             </span>
           </h1>
 
-          <div className="min-h-[32px] mb-8">
+          <div className="min-h-8 mb-8">
               <p className="text-xl text-gray-400 border-r-2 border-purple-500 inline-block pr-2 animate-pulse">
               {text}
               </p>
@@ -118,7 +118,7 @@ const Home = () => {
           <div className="relative w-64 h-64 md:w-80 md:h-80 animate-float">
             
             {/* Glowing Pulse Effect Behind Image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse" />
+            <div className="absolute inset-0 bg-linear-to-tr from-purple-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse" />
             
             {/* Your Image */}
             <img 

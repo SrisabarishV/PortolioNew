@@ -12,6 +12,8 @@ import revalix1 from "../assets/revalix1.png";
 import revalix2 from "../assets/revalix2.png";
 import revalix3 from "../assets/revalix3.png";
 import revalix4 from "../assets/revalix4.png";
+import smartbin1 from "../assets/samrtbin1.png";
+import smartbin2 from "../assets/samrtbin2.png";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -46,7 +48,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: "Revalix ",
-      category: "DOTNET c# & React",
+      category: "Asp.NET Core & React",
       image: revalix1,
       gallery: [ revalix1, revalix2, revalix3, revalix4 ],
       desc: "Revalix is a Real Estate Analytics and Property Intelligence platform that aggregates property data from multiple sources and provides advanced search, valuation, and analytics capabilities for real estate professionals such as appraisers, lenders, investors, and property analysts. objective of the platform is to convert large volumes of raw property data into meaningful insights that help users make better real estate decisions.",
@@ -55,16 +57,25 @@ const Portfolio = () => {
     }, 
     {
       title: "MJ Transport - Logistics Management",
-      category: "DOTNET c# & React",
+      category: "Asp.NET Core & React",
       image: MJ1,
       gallery: [  MJ1, MJ2, MJ3  ],
       desc: "Developed a scalable backend for the MJ Transport Logistics Management System using ASP.NET Core and PostgreSQL. Implemented modules for trip management, intent approval workflows, fleet tracking, driver and truck management, payment processing, financial reporting, and role-based access control. Built automated Profit & Loss reports, supplier and client ledgers, office expense management, and dashboard analytics with real-time KPIs. Designed optimized database queries, secure JWT authentication, validation logic to prevent financial inconsistencies, Excel export functionality, and RESTful APIs following N- tier Architecture principles. The system provides accurate operational tracking, financial transparency, and efficient business reporting through a secure and high-performance backend.",
       tech: ["React", "Dot net Core", "C#", "Postgres SQL"],
       // github: "#"
     },
+    {  
+      title: "Smartbin Management System",
+      category: "Asp.NET Core",
+      image: smartbin1,
+      gallery: [smartbin1 , smartbin2],
+      desc: "SmartBin is an IoT-based waste management system that helps monitor the fill level of garbage bins in real time. The main objective of the project is to optimize waste collection by notifying authorities when bins are full and providing analytics for efficient route planning and waste management. ",
+      tech: ["React", "Dot net Core", "C#", "MSsql"],
+      // github: "#"
+    },
     { 
       title: "Park Travel - Smart Travel Management",
-      category: "DOTNET c#",
+      category: "Asp.NET Core",
       image: park1,
       gallery: [park1 , park2],
       desc: "Park Travel is a Smart Travel Management System designed to digitize and automate employee transportation management for organizations. The system manages everything from employee registration and trip scheduling to vehicle allocation, driver management, QR-based attendance tracking, and real-time location monitoring.The main objective of the project is to reduce manual transportation management efforts, improve employee safety, and provide complete visibility of daily transportation operations.",

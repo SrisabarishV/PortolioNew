@@ -136,7 +136,7 @@ const About = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
               </div>
-              <span className="text-3xl font-bold text-white">0.6+</span>
+              <span className="text-3xl font-bold text-white">1</span>
             </div>
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Years Exp.</h3>
             <p className="text-xs text-gray-500">Continuous learning journey</p>

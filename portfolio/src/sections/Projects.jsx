@@ -3,6 +3,7 @@ import SqlCertImage from "../assets/SqlCertificate.png";
 import book from "../assets/Bookworms.png";
 import youtube from "../assets/youtubereact.png";
 import qrcode from "../assets/qrgen.png";
+import dashboard from "../assets/dashboard.png";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -32,6 +33,14 @@ const Portfolio = () => {
 
   // === DATA: PROJECTS ===
   const projects = [
+    {
+      title: "MJ Transport - Logistics Management",
+      category: "DOTNET c#",
+      image: dashboard,
+      desc: "Developed a scalable backend for a logistics management system using ASP.NET Core and PostgreSQL,handling trips, fleet, drivers, payments, and role-based access control.Built secure RESTful APIs, automated financial reports, dashboard analytics, and optimized database operations for efficient and transparent business management.",
+      tech: ["React", "Dot net Core", "C#", "Postgres SQL"],
+      details: "#"
+    },
     {
       title: "QuickAI",
       category: "AI & Web App",
@@ -74,15 +83,8 @@ const Portfolio = () => {
       desc: "A Web application that allows users to Book appointments based on availabibility with admin panel.",
       tech: ["MVC", "C#", "SQL"],
       details: "https://github.com/SrisabarishV/AppointmentBookingSystem"
-    },
-    {
-      title: "Authorization-as-Admin-User-MVC",
-      category: "Asp.Net MVC",
-      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8efe30?q=80&w=800&auto=format&fit=crop",
-      desc: "A Web application that allows users to generate customized QR codes for URLs, text, and more.",
-      tech: ["MVC", "C#", "SQL"],
-      details: "https://github.com/SrisabarishV/Authorization-as-Admin-User-MVC"
     }
+    
 
   ];
 
